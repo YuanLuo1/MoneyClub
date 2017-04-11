@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact President</title>
+    <title>User Profile</title>
     <!-- Core CSS - Include with every page -->
     <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -245,74 +245,134 @@
                     <!--Timeline -->
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <i class="fa fa-clock-o fa-fw"></i>Contact President
+                            <i class="fa fa-clock-o fa-fw"></i>Profile
                         </div>
 
                         <div class="panel-body">
                             
                                
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-8">
 
-                   
+              
+                        <div class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="card">
+                                            <div class="header">
+                                                <h4 class="title">My Profile</h4>
+                                            </div>
+                                            <div class="content">
+                                                <form>
 
-                    <form id="contact-form" method="post" action="contact.php" role="form">
 
-                        <div class="messages"></div>
 
-                        <div class="controls">
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_name">Firstname *</label>
-                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                                        <div class="help-block with-errors"></div>
+                                                    <div class="row">
+
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <label>Username</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Username" value="billgates1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <div class="form-group">
+                                                                <label>Email Address</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Email Address" value="billg@gmail.com">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>First Name</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Company" value="Bill">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Last Name</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Last Name" value="Gates">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label>Genter</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Gender" value="Male">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Birthday</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Birthday" value="Nov 08, 1994">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Current Balance</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Current Balance" value="$888.88">
+                                                            </div>
+                                                        </div>
+                                                         <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Current Weight</label>
+                                                                <input type="text" class="form-control" disabled placeholder="Current Weight" value="10.88%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_lastname">Lastname *</label>
-                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                        <div class="help-block with-errors"></div>
+                                    <div class="col-md-4">
+                                        <div class="card card-user">
+                                            <div class="image">
+                                                <img src="https://images.celebfamily.com/wp-content/uploads/2014/09/b-g.jpg" alt="..."/>
+                                            </div>
+                                            <div class="content">
+                                                <div class="author">
+                                                     <a href="#">
+                                        
+                                                      <h4 class="title">Bill Gates<br />
+                                                         <small>billgates1</small>
+                                                      </h4>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                            <hr>
+                                            <div class="text-center">
+                                                <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+                                                <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+                                                <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_email">Email *</label>
-                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_phone">Phone</label>
-                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="form_message">Message *</label>
-                                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for the president *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-success btn-send" value="Send message">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="text-muted"><strong>*</strong> These fields are required.</p>
+
                                 </div>
                             </div>
                         </div>
 
-                    </form>
+
+
+
+
+
+
+
 
                 <!-- /.8 -->
 
