@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyClub DashBoard</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="/static/MoneyClub/assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="/static/MoneyClub/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/static/MoneyClub/assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="/static/MoneyClub/assets/css/style.css" rel="stylesheet" />
+    <link href="/static/MoneyClub/assets/css/main-style.css" rel="stylesheet" />
+    <!-- Page-Level CSS -->
+    <link href="/static/MoneyClub/assets/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+   </head>
+<body>
+    <!--  wrapper -->
+    <div id="wrapper">
+        <!-- navbar top -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" style="color: white; font-size: 30px">
+                    MONEYCLUB
+                </a>
+
+                <i class="fa fa-2x" style=" margin-left: 2cm;color: white">TWTR $14.39</i>
+                <i class="fa fa-2x" style=" margin-left: 2cm;color: white; margin-top: 0.5cm">GOOGL $845.10</i>
+                <i class="fa  fa-2x" style=" margin-left: 2cm;color: white">LNKD $195.96</i>
+                
+            </div>
+            <!-- end navbar-header -->
+            <!-- navbar-top-links -->
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- main dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="top-label label label-danger">3</span><i class="fa fa-envelope fa-3x"></i>
+                    </a>
+
+<!-- dropdown-messages -->
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong><span class=" label label-danger">President</span></strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Today</em>
+                                    </span>
+                                </div>
+                                <div>Welcome Bill! If you have any questions, please don't hesitate to contact me!</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong><span class=" label label-info">Secretary</span></strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Thank you for your suggestions about the learning materials! I will review them by tonight!</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong><span class=" label label-success">Treasure</span></strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Hi Bill, regarding your questions about the voting rules, here ...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-messages -->
+
+
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-3x"></i>
+                    </a>
+                    <!-- dropdown user-->
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-user -->
+                </li>
+                <!-- end main dropdown -->
+            </ul>
+            <!-- end navbar-top-links -->
+
+        </nav>
+        <!-- end navbar top -->
+
+        <!-- navbar side -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <!-- sidebar-collapse -->
+            <div class="sidebar-collapse" style="background-color: white"">
+                <!-- side-menu -->
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <!-- user image section-->
+                        <div class="user-section">
+                            <div class="user-section-inner">
+                                <img src="assets/img/user.jpg" alt="">
+                            </div>
+                            <div class="user-info">
+                                <div>Bill <strong>Gates</strong></div>
+                                <div class="user-text-online">
+                                    <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                                </div>
+                            </div>
+                        </div>
+                        <!--end user image section-->
+                    </li>
+                    <li class="sidebar-search">
+                        <!-- search section-->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <!--end search section-->
+                    </li>
+                    <li class="selected">
+                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                    </li>
+                     <li>
+                        <a href="timeline.html"><i class="fa fa-flask fa-fw"></i>Timeline</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Roles<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="president.html">President</a>
+                            </li>
+                            <li>
+                                <a href="secretary.html">Secretary</a>
+                            </li>
+                            <li>
+                                <a href="treasurer.html">Treasurer</a>
+                            </li>
+                        </ul>
+                        <!-- second-level-items -->
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-group fa-fw"></i>Meeting Rooms<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="https://hangouts.google.com/">Google Hangout</a>
+                            </li>
+                            <li>
+                                <a href="https://www.skype.com/en/">Skype</a>
+                            </li>
+                        </ul>
+                        <!-- second-level-items -->
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-hand-o-up fa-fw"></i>Vote</a>
+                            
+
+                        <div class="col">
+                            <!--quick info section -->
+                            <div class="row-md-2">
+                                <div class="alert alert-danger text-center">
+                                    <i class="fa fa-calendar fa-3x"></i>&nbsp;<b>#1 VOTE </b><br>invest Google<br>
+                                    <button>Follow</button>   <button>Unfollow</button>
+                                </div>
+                            </div>
+                            <div class="row-lg-3">
+                                <div class="alert alert-danger text-center">
+                                    <i class="fa fa-calendar fa-3x"></i>&nbsp;<b>#2 VOTE </b><br>invest Amazon<br>
+                                    <button>Follow</button>   <button>Unfollow</button>
+                                </div>
+                            </div>
+                            <div class="row-lg-3">
+                                <div class="alert alert-danger text-center">
+                                    <i class="fa fa-calendar fa-3x"></i>&nbsp;<b>#3 VOTE </b><br>invest LinkedIn<br>
+                                    <button>Follow</button>   <button>Unfollow</button>
+                                </div>
+                            </div>
+                            <div class="row-lg-3">
+                                <div class="alert alert-danger text-center">
+                                    <i class="fa fa-calendar fa-3x"></i>&nbsp;<b>#4 VOTE </b><br>invest Facebook<br>
+                                    <button>Follow</button>   <button>Unfollow</button>
+                                </div>
+                            </div>
+                            <!--end quick info section -->
+                        </div>
+
+                    </li>
+                    
+            </div>
+            <!-- end sidebar-collapse -->
+        </nav>
+        <!-- end navbar side -->
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+                <!-- Page Header -->
+                <div class="col-md-12">
+                    <h1 class="page-header"></h1>
+                </div>
+                <!--End Page Header -->
+            </div>
+
+           
+
+           
+
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <!--Simple table example -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i>Education Place
+                        </div>
+                       <td>
+                        
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                  <tr><h4>Learn From Financial Journals</h4>
+                                    <ul>
+                                        <li>
+                                        <a href="http://www.economist.com/">Read The Economics</a>
+                                        </li>
+                                        <li>
+                                        <a href="https://hbr.org/">Harvard Business Review</a>
+                                        </li>
+                                        <li>
+                                        <a href="https://www.bloomberg.com/businessweek">Bloomberg</a>
+                                        </li>
+                                    </ul>
+                                 </tr>
+                                <hr><h4>Learn From Online Courses</h4>
+                                <tr>
+                                  <ul>
+                                      <li><b>Course from Upenn</b></li>
+                                        <a href="https://www.coursera.org/learn/wharton-marketing">Marketing </a> -- Taught by three of Wharton's top faculty in the marketing department, consistently ranked as the #1 marketing department in the world.
+
+                                        <li><b>Course from Yale</b></li>
+                                        <a href="https://www.coursera.org/learn/financial-markets">Financial</a> -- Professor Robert Shiller, 2013 Nobel Prize winner in Economic Sciences, explores the topic of Financial Markets in this eight module course.
+                                        <li><b>Course from Michigan</b></li>
+                                        <a href="https://www.coursera.org/specializations/valuation-investment">Risk Management</a> -- This Specialization builds on the success of the Introduction to Finance course and provides a rigorous introduction to core topics in financial valuation.
+                                  </ul>
+
+                                </tr>
+                                <hr><h4>Learn From Others</h4>
+                                <tr>
+                                  
+                                       <div class="panel-body">
+                            <ul class="chat">
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">Jack Sparrow</strong>
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i>12 mins ago
+                                            </small>
+                                        </div>
+                                        <p>
+                                            Investors can expect a 10-15% decline, with a possibility of a 20% decline. More details at https://seekingalpha.com/article/4060118-expect-10minus-15-percent-decline-stock-market
+                                        </p>
+                                        <input type="text" maxlength="120" name="comments">
+                                        <button>comment</button> 
+                                        <button class="pull-right">Show comments</button>
+                                    </div>
+                                </li>
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i>13 mins ago</small>
+                                            <strong class="pull-left primary-font">Amy Brown</strong>
+                                        </div>
+                                        <br><p>
+                                            In the stock market today, shares of Panera Bread (PNRA) soared 14% to 312.57 on news that it's being bought by JAB, whose brands include Keurig, Krispy Kreme and Peet's Coffee & Tea. The deal is valued at more than $7.5 billion and values Panera at around $315 a share.
+                                        </p>
+                                        <input type="text" maxlength="120" name="comments">
+                                        <button>comment</button> 
+                                        <button class="pull-right">Show comments</button>
+                                    </div>
+                                </li>
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">Jack Sparrow</strong>
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i>14 mins ago</small>
+                                        </div>
+                                        <p>
+                                            Contributer to stock market: President Donald Trump is slated to meet with his Chinese counterpart, Xi Jinping, in a closely watched two-day summit that could influence the relationship between the world’s largest economies amid growing tensions.
+                                        </p>
+                                        <input type="text" maxlength="120" name="comments">
+                                        <button>comment</button> 
+                                        <button class="pull-right">Show comments</button>
+                                    </div>
+                                </li>
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i>15 mins ago</small>
+                                            <strong class="pull-left primary-font">Amy Brown</strong>
+                                        </div>
+                                        <br><p>
+                                            Snap shares priced at $17 and opened at $24 in their March 2 public debut. The stock hit an intraday high of $29.44 on March 3. If the stock closes down on Wednesday it would mark Snap's fifth straight session of declines.
+                                        </p>
+                                        <input type="text" maxlength="120" name="comments">
+                                        <button>comment</button> 
+                                        <button class="pull-right">Show comments</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+
+
+
+                                </tr>
+                                </div>
+                           
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        
+                       </td> <!-- /.panel-body -->
+                    </div>
+                    <!--End simple table example -->
+
+
+                    <!--Area chart example -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i>Today's Investment Result
+                            
+                        </div>
+
+                        <div class="panel-body">
+                            <div id="morris-area-chart"></div>
+                        </div>
+
+                    </div>
+                    <!--End area chart example -->
+
+                   
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="panel panel-primary text-center no-boder">
+                        <div class="panel-body yellow">
+                            <i class="fa fa-dollar fa-3x"></i>
+                            <h2>Money Pool</h2>
+                            <h4>$8520.57</h4>
+                        </div>
+                        
+                    </div>
+                    <div class="panel panel-primary text-center no-boder">
+                        <div class="panel-body blue">
+                            <i class="fa fa-user fa-3x"></i>
+                            <h2>My Balance</h2>
+                            <h4>$906.83</h4>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary text-center no-boder">
+                        <div class="panel-body green">
+                            <i class="fa fa-level-up fa-3x"></i>
+                            <h2>My weight</h2>
+                            <h4>$10.64%</h4>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary text-center no-boder">
+                        <div class="panel-body red">
+                            <i class="fa fa-group fa-3x"></i>
+                            <h2>Membership Status</h2>
+                            <h4>New Member</h4>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary text-center no-boder">
+                        <div class="panel-body purple">
+                            <i class="fa fa-twitter fa-3x"></i>
+                            <h2>Club Size</h2>
+                            <h4>19</h4>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary text-center no-boder">
+                      <div class="panel-primary">
+                        <div class="panel panel-heading">
+                            <i class="fa fa-bell fa-fw"></i>Notifications Panel
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-comment fa-fw"></i>New Comment
+                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-bar-chart-o fa-fw"></i>New Education
+                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-envelope fa-fw"></i>Message Sent
+                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-tasks fa-fw"></i>New Task
+                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-shopping-cart fa-fw"></i>New Order Placed
+                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                    </span>
+                                </a>
+
+                            </div>
+                            <!-- /.list-group -->
+                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                        </div>
+                     </div>
+                    </div>
+                    <!--End Notifications-->
+
+            
+                </div>
+                
+            </div>
+
+
+         
+
+
+        </div>
+        <!-- end page-wrapper -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="/static/MoneyClub/assets/plugins/jquery-1.10.2.js"></script>
+    <script src="/static/MoneyClub/assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="/static/MoneyClub/assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/static/MoneyClub/assets/plugins/pace/pace.js"></script>
+    <script src="/static/MoneyClub/assets/scripts/siminta.js"></script>
+    <!-- Page-Level Plugin Scripts-->
+    <script src="/static/MoneyClub/assets/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/MoneyClub/assets/plugins/morris/morris.js"></script>
+    <script src="/static/MoneyClub/assets/scripts/dashboard-demo.js"></script>
+
+</body>
+
+</html>
