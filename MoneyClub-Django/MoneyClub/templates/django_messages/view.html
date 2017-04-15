@@ -1,0 +1,57 @@
+{% extends "skilltree/stream.html" %}
+{% load i18n %}
+
+{% block title %} View Message {% endblock %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            
+            {% block leftside %}
+             <div class="col-md-9">
+                <h1>{% trans "View Message" %}</h1>
+				<dl class="message-headers">
+				    <dt>{% trans "Subject" %}: <strong>{{ message.subject }}</strong></dt><br \>
+				    <dt>{% trans "Sender" %}: {{ message.sender }}</dt><br \>
+				    <dt>{% trans "Date" %}: {{ message.sent_at|date:_("DATETIME_FORMAT")}}</dt><br \>
+				    <dt>{% trans "Recipient" %}: {{ message.recipient }}</dt><br \>
+				</dl>
+				<hr>
+				<h4><p>Message Body:</p><br>
+				{{ message.body|linebreaksbr }}</h4><br /><br />
+				<h4>
+				{% ifequal message.recipient.pk user.pk %}
+				<a href="{% url 'messages_reply' message.id %}" id="replyMbtn">{% trans "Reply" %}</a>
+				{% endifequal %}
+				<a href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
+				</h4>
+				{% comment %}Example reply_form integration
+				{% if reply_form %}
+				<h1>{% trans "Compose reply"%}</h1>
+				<form action="{% url 'messages_reply' message.id %}" method="post">
+				{% csrf_token %}
+				<table>
+				{{ reply_form.as_table }}
+				</table>
+				<input type="submit" value="{% trans "Send" %} &raquo;"/>
+				</form>
+				{% endif %}
+				{% endcomment %}
+            </div><!-- end of left side -->
+            {% endblock %}
+
+            {% block rightside %}
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{% url 'messages_inbox' %} " class="list-group-item">Inbox</a>
+                    <a href="{% url 'messages_outbox' %} " class="list-group-item">Sent Messages</a>
+                    <a href="{% url 'messages_compose' %} " class="list-group-item">New Message</a>
+                    <a href="{% url 'messages_trash' %} " class="list-group-item">Trash</a>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+    <!-- /.container -->
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "skilltree/stream.html" %}
+{% load i18n %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            
+            {% block leftside %}
+             <div class="col-md-9">
+                <h1>{% trans "Compose Message"%}</h1>
+					<form action="" method="post">
+					{% csrf_token %}
+					<table id='newMtable'>
+					   {% for field in form.visible_fields %}
+                        <tr>
+                            <td valign="top">
+                                <b>{{field.label}}:</b>
+                            </td>
+                            <td valign="top">
+                            {{field}}
+                             </td>
+                            {% if field.errors %}
+                            <td valign="top">
+                            <label style="color:red">{{field.errors}}</label>
+                             </td>
+                            {% endif %}
+                            <br>
+                        </tr>
+                        {% endfor %}
+                        <td></td>
+                        <td>
+                        <input type="submit" value="{% trans "Send" %} &raquo;"/>
+                        </td>
+					</table>
+					</form>
+            </div><!-- end of left side -->
+            {% endblock %}
+
+            {% block rightside %}
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{% url 'messages_inbox' %} " class="list-group-item">Inbox</a>
+                    <a href="{% url 'messages_outbox' %} " class="list-group-item">Sent Messages</a>
+                    <a href="{% url 'messages_compose' %} " class="list-group-item">New Message</a>
+                    <a href="{% url 'messages_trash' %} " class="list-group-item">Trash</a>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+    <!-- /.container -->
+{% endblock %}
