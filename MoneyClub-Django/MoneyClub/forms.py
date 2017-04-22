@@ -7,5 +7,8 @@ from django.utils.safestring import mark_safe
 from MoneyClub.models import *
 
 class CustomAuthForm(AuthenticationForm):
-    username = forms.CharField(widget=TextInput(attrs={'class': 'form-control form-signin','placeholder': 'Username', 'required': 'True'}))
-    password = forms.CharField(widget=PasswordInput(attrs={'class': 'form-control form-signin','placeholder':'Password', 'required':'True'}))
+    username = forms.CharField(widget=TextInput(attrs={'class': 'fontawesome-user','placeholder': 'Username', 'required': 'True'}))
+    password = forms.CharField(widget=PasswordInput(attrs={'class': 'fontawesome-lock','placeholder':'Password', 'required':'True'}))
+
+class CustomPassResetEmail(PasswordResetForm):
+    email = forms.EmailField(max_length = 100, widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email', 'required':'True', 'style': 'margin-bottom: 10px'}))

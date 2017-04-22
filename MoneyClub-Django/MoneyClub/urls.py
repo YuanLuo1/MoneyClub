@@ -7,9 +7,10 @@ import django_messages.views
 
 urlpatterns = [
     url(r'^$', MoneyClub.views.home,name='home'),
-    url(r'^login$', django.contrib.auth.views.login, {'template_name':'MoneyClub/login.html', 'authentication_form': MoneyClub.forms.CustomAuthForm}, name='login'),
+    url(r'^login$', django.contrib.auth.views.login, {'template_name':'MoneyClub/login_yl.html', 'authentication_form': MoneyClub.forms.CustomAuthForm}, name='login'),
     url(r'^logout$', django.contrib.auth.views.logout_then_login, name='logout'),
-    # url(r'^register$', MoneyClub.views.register, name='register'),
+    url(r'^register$', MoneyClub.views.register, name='register'),
+    url(r'^reset/password_reset/$', django.contrib.auth.views.password_reset, {'template_name': 'MoneyClub/password_reset_form.html', 'password_reset_form': MoneyClub.forms.CustomPassResetEmail}, name="password_reset"),
     url(r'^dashboard$',MoneyClub.views.load, name = 'dashboard'),
     url(r'^messages/$', RedirectView.as_view(permanent=True, url='inbox/'), name='messages_redirect'),
     url(r'^messages/inbox/$', django_messages.views.inbox, {'template_name': 'django_messages/inbox.html'}, name='messages_inbox'),
