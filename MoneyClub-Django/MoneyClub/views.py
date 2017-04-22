@@ -45,8 +45,6 @@ def register(request):
     context['form'] = ProfileForm()
     context['form_login'] = AuthenticationForm(auto_id=False)
 
-    context = {}
-    new_user = get_object_or_404(User, id=id)
     token = default_token_generator.make_token(new_user)
     new_token = Token.objects.create(user=new_user, token=token)
     new_token.save()
@@ -56,13 +54,13 @@ def register(request):
         if Info.objects.filter(username=new_user.username).count() > 1:
             row.delete()
 
-    user_profile = get_object_or_404(Info, owner=new_user)
+    #user_profile = get_object_or_404(Info, owner=new_user)
     email_body = """
         Hi %s %s,\n\nWelcome to MoneyClub.
     Please click the link below to verify your email address and complete the registration of your account:
 
         http://%s%s
-    """ % (user_profile.first_name, user_profile.last_name, request.get_host(),
+    """ % (new_user.first_name, new_user.last_name, request.get_host(),
            reverse('confirm', args=(new_user.username, token)))
 
     send_mail(subject="Verify your email address for Money Club",

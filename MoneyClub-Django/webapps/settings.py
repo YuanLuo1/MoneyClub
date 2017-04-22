@@ -52,9 +52,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 ROOT_URLCONF = 'webapps.urls'
+# Used by the authentication system for the grumblr application.
+# URL to use if the authentication system requires a user to log in.
+LOGIN_URL = '/moneyclub/login'
 
+# Default URL to redirect to after a user logs in.
+LOGIN_REDIRECT_URL = '/moneyclub/dashboard'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
