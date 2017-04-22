@@ -1,0 +1,51 @@
+{% extends "MoneyClub/index_yl.html" %}
+{% block title %}Statistic Charts{% endblock %}
+{% block nav-side-dashboard-active %}{% endblock %}
+{% block nav-side-timeline-active %}{% endblock %}
+{% block nav-side-stockvote-active %}{% endblock %}
+{% block nav-side-education-active %}{% endblock %}
+{% block nav-side-charts-active %}class="active"{% endblock %}
+{% block nav-side-history-active %}{% endblock %}
+{% block nav-side-president-active %}{% endblock %}
+{% block nav-side-secretary-active %}{% endblock %}
+{% block nav-side-treasurer-active %}{% endblock %}
+{% block nav-side-googlehangouts-active %}{% endblock %}
+{% block nav-side-skype-active %}{% endblock %}
+{% block content %}
+<!--  page-wrapper -->
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+           <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Statistic Charts
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="{% url 'dashboard' %}">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-bar-chart-o"></i> Statistic Charts
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Stock price wave</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-area-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+        </div>
+        </div>
+{% endblock %}

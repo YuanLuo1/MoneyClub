@@ -163,36 +163,36 @@
                         <a href="{% url 'stockvote' %}"><i class="fa fa-fw fa-money"></i> Stock Votes</a>
                     </li>
                     <li {% block nav-side-education-active %}{% endblock %}>
-                        <a href="timeline.html"><i class="fa fa-fw fa-book"></i> Education</a>
+                        <a href="{% url 'education' %}"><i class="fa fa-fw fa-book"></i> Education</a>
                     </li>
                     <li {% block nav-side-charts-active %}{% endblock %}>
-                        <a href="timeline.html"><i class="fa fa-fw fa-pie-chart"></i> Statistic Charts</a>
+                        <a href="{% url 'charts' %}"><i class="fa fa-fw fa-pie-chart"></i> Statistic Charts</a>
                     </li>
                     <li {% block nav-side-history-active %}{% endblock %}>
-                        <a href="timeline.html"><i class="fa fa-fw fa-history"></i> Purchase History</a>
+                        <a href="{% url 'history' %}"><i class="fa fa-fw fa-history"></i> Purchase History</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#officer"><i class="fa fa-fw fa-user"></i> Officers<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="officer" class="collapse">
                             <li {% block nav-side-president-active %}{% endblock %}>
-                                <a href="president.html">President</a>
+                                <a href="{% url 'president' %}">President</a>
                             </li>
                             <li {% block nav-side-secretary-active %}{% endblock %}>
-                                <a href="secretary.html">Secretary</a>
+                                <a href="{% url 'secretary' %}">Secretary</a>
                             </li>
                             <li {% block nav-side-treasurer-active %}{% endblock %}>
-                                <a href="treasurer.html">Treasurer</a>
+                                <a href="{% url 'treasurer' %}">Treasurer</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-group fa-fw"></i>Meeting Rooms<i class="fa fa-fw fa-caret-down"></i></a>
+                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-group fa-fw"></i> Meeting Rooms<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li {% block nav-side-googlehangouts-active %}{% endblock %}>
-                                <a href="https://hangouts.google.com/">Google Hangouts</a>
+                                <a href="https://hangouts.google.com/"><i class="fa fa-google fw"></i> Google Hangouts</a>
                             </li>
                             <li {% block nav-side-skype-active %}{% endblock %}>
-                                <a href="https://www.skype.com/en/">Skype</a>
+                                <a href="https://www.skype.com/en/"><i class="fa fa-skype fw"></i> Skype</a>
                             </li>
                         </ul>
                     </li>

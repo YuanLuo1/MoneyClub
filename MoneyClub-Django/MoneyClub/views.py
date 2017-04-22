@@ -25,6 +25,24 @@ def timeline(request):
 def stockvote(request):
     return render(request, 'MoneyClub/vote.html', {})
 
+def education(request):
+    return render(request, 'MoneyClub/education.html', {})
+
+def charts(request):
+    return render(request, 'MoneyClub/charts.html', {})
+
+def history(request):
+    return render(request, 'MoneyClub/history.html', {})
+
+def president(request):
+    return render(request, 'MoneyClub/president.html', {})
+
+def secretary(request):
+    return render(request, 'MoneyClub/secretary.html', {})
+
+def treasurer(request):
+    return render(request, 'MoneyClub/treasurer.html', {})
+
 @transaction.atomic
 def register(request):
     context = {}
