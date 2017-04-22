@@ -17,7 +17,13 @@ def home(request, error_message=None):
     return render(request, 'MoneyClub/home.html',{})
 
 def load(request):
-    return render(request, 'MoneyClub/index.html', {})
+    return render(request, 'MoneyClub/index_yl.html', {})
+
+def timeline(request):
+    return render(request, 'MoneyClub/timeline.html', {})
+
+def stockvote(request):
+    return render(request, 'MoneyClub/vote.html', {})
 
 @transaction.atomic
 def register(request):
