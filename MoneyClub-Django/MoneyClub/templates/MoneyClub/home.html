@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Money Club - Invest with a group of smart people</title>
+    <title>{% block title %}Money Club - Invest with a group of smart people{% endblock %}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/MoneyClub/homevendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +67,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
+{% block content %}
     <header>
         <div class="header-content">
             <div class="header-content-inner">
@@ -78,6 +78,7 @@
             </div>
         </div>
     </header>
+
 
     <section class="bg-primary" id="about">
         <div class="container">
@@ -154,7 +155,7 @@
             </div>
         </div>
     </section>
-
+{% endblock %}
     <!-- jQuery -->
     <script src="/static/MoneyClub/homevendor/jquery/jquery.min.js"></script>
 

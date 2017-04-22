@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoneyClub DashBoard</title>
+    <title>{% block title %}MoneyClub DashBoard{% endblock %}</title>
     <!-- Core CSS - Include with every page -->
     <link href="/static/MoneyClub/assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="/static/MoneyClub/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -83,7 +83,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="text-center" href="{% url 'messages_inbox' %}">
+                            <a class="text-center" href="{% url 'messages_redirect' %}">
                                 <strong>Read All Messages</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -237,7 +237,7 @@
             </div>
 
            
-
+{%  block content %}
            
 
             <div class="row">
@@ -484,7 +484,7 @@
 
 
          
-
+{% endblock %}
 
         </div>
         <!-- end page-wrapper -->
