@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Money Club - Invest with a group of smart people</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/MoneyClub/homevendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/static/MoneyClub/homevendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="/static/MoneyClub/homevendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="/static/MoneyClub/css/creative.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+<div class="container">
+  <div class="row">
+  	<div class="col-md-6">
+<div id="legend">
+              <legend class="">Register</legend>
+            </div>
+        <form class="form-signup" method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+            {{field}}
+            {% if field.errors %}
+            <label style="color:red">{{field.errors}}</label>
+            {% endif %}
+        {% endfor %}
+        {% for field in form.hidden_fields %}
+            {{field}}
+        {% endfor %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button><br>
+    </form>
+{#          <form class="form-horizontal" action="" method="POST">#}
+{#          <fieldset>#}
+{##}
+{#            <div class="control-group">#}
+{#              <label class="control-label" for="username">Username</label>#}
+{#              <div class="controls">#}
+{#                <input type="text" id="username" name="username" placeholder="" class="form-control input-lg">#}
+{#                <p class="help-block">Username can contain any letters or numbers, without spaces</p>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#            <div class="control-group">#}
+{#              <label class="control-label" for="email">E-mail</label>#}
+{#              <div class="controls">#}
+{#                <input type="email" id="email" name="email" placeholder="" class="form-control input-lg">#}
+{#                <p class="help-block">Please provide your E-mail</p>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#            <div class="control-group">#}
+{#              <label class="control-label" for="password">Password</label>#}
+{#              <div class="controls">#}
+{#                <input type="password" id="password" name="password" placeholder="" class="form-control input-lg">#}
+{#                <p class="help-block">Password should be at least 6 characters</p>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#            <div class="control-group">#}
+{#              <label class="control-label" for="password_confirm">Password (Confirm)</label>#}
+{#              <div class="controls">#}
+{#                <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control input-lg">#}
+{#                <p class="help-block">Please confirm password</p>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#            <div class="control-group">#}
+{#              <!-- Button -->#}
+{#              <div class="controls">#}
+{#                <button class="btn btn-success">Register</button>#}
+{#              </div>#}
+{#            </div>#}
+{#          </fieldset>#}
+{#        </form>#}
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
