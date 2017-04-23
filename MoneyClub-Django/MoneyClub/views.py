@@ -43,6 +43,9 @@ def secretary(request):
 def treasurer(request):
     return render(request, 'MoneyClub/treasurer.html', {})
 
+def profile(request):
+    return render(request, 'MoneyClub/userprofile.html', {})
+
 @transaction.atomic
 def register(request):
     context = {}

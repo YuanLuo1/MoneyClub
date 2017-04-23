@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^register$', MoneyClub.views.register, name='register'),
     url(r'^confirm-register/(?P<username>\w+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})$', MoneyClub.views.confirm_register, name='confirm'),
     url(r'^reset/password_reset/$', django.contrib.auth.views.password_reset, {'template_name': 'MoneyClub/password_reset_form.html', 'password_reset_form': MoneyClub.forms.CustomPassResetEmail}, name="password_reset"),
+    url(r'^profile$',MoneyClub.views.profile, name='profile'),
     url(r'^dashboard$',MoneyClub.views.load, name = 'dashboard'),
     url(r'^dashboard/timeline$',MoneyClub.views.timeline, name = 'timeline'),
     url(r'^dashboard/stockvotes$',MoneyClub.views.stockvote, name = 'stockvote'),
