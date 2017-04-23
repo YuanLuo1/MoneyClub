@@ -1,15 +1,41 @@
-{% extends "MoneyClub/index.html" %}
+{% extends "MoneyClub/index_yl.html" %}
 {% load i18n %}
 
-{% block title %} Dashboard {% endblock %}
-
+{% block title %} Trash {% endblock %}
+{% block nav-side-dashboard-active %}{% endblock %}
+{% block nav-side-timeline-active %}{% endblock %}
+{% block nav-side-stockvote-active %}{% endblock %}
+{% block nav-side-education-active %}{% endblock %}
+{% block nav-side-charts-active %}{% endblock %}
+{% block nav-side-history-active %}{% endblock %}
+{% block nav-side-president-active %}{% endblock %}
+{% block nav-side-secretary-active %}{% endblock %}
+{% block nav-side-treasurer-active %}{% endblock %}
+{% block nav-side-googlehangouts-active %}{% endblock %}
+{% block nav-side-skype-active %}{% endblock %}
 {% block content %}
-    <!-- Page Content -->
-    <div class="container">
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+           <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Deleted Messages
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="{% url 'dashboard' %}">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-bar-chart-o"></i> Trash
+                        </li>
+                    </ol>
+                </div>
+            </div> <!-- row -->
         <div class="row"> 
             {% block leftside %}
              <div class="col-md-9">
-                <h1>{% trans "Deleted Messages" %}</h1>
                     {% if message_list %}
                     <table id = "newMtable">
                         <thead>

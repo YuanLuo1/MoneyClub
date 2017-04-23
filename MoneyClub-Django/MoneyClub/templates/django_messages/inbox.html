@@ -1,43 +1,139 @@
-{% extends "MoneyClub/index.html" %}
+{% extends "MoneyClub/index_yl.html" %}
 {% load i18n %}
 
-{% block title %} Dashboard {% endblock %}
-
+{% block title %} In-site Messages {% endblock %}
+{% block nav-side-dashboard-active %}{% endblock %}
+{% block nav-side-timeline-active %}{% endblock %}
+{% block nav-side-stockvote-active %}{% endblock %}
+{% block nav-side-education-active %}{% endblock %}
+{% block nav-side-charts-active %}{% endblock %}
+{% block nav-side-history-active %}{% endblock %}
+{% block nav-side-president-active %}{% endblock %}
+{% block nav-side-secretary-active %}{% endblock %}
+{% block nav-side-treasurer-active %}{% endblock %}
+{% block nav-side-googlehangouts-active %}{% endblock %}
+{% block nav-side-skype-active %}{% endblock %}
 {% block content %}
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            
-            {% block leftside %}
-             <div class="col-md-9">
-                <h1>Inbox</h1>
-                    {% if message_list %}
-                    <table id="newMtable">
-                        <thead>
-                            <tr><th>{% trans "Sender" %}</th><th>{% trans "Subject" %}</th><th>{% trans "Received" %}</th><th>{% trans "Action" %}</th></tr>
-                        </thead>
-                        <tbody>
-                            {% for message in message_list %}
-                                <tr>
-                                    <td>{{ message.sender }}</td>
-                                    <td>
-                                        {% if message.new %}<strong>{% endif %}
-                                        {% if message.replied %}<em>{% endif %}
-                                        <a href="{{ message.get_absolute_url }}">{{ message.subject }}</a>
-                                        {% if message.replied %}</em>{% endif %}
-                                        {% if message.new %}</strong>{% endif %}</td>
-                                    <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
-                                    <td><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                    {% else %}
-                    <h4 id="newMessage">{% trans "No messages for now." %}</h4>    
-                    {% endif %}
-            </div><!-- end of left side -->
-            {% endblock %}
+    <div id="page-wrapper">
 
+        <div class="container-fluid">
+           <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        In-site messages
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <i class="fa fa-dashboard"></i>  <a href="{% url 'dashboard' %}">Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <i class="fa fa-bar-chart-o"></i> In-site messages
+                        </li>
+                    </ol>
+                </div>
+            </div> <!-- row -->
+    {% block leftside %}
+               <div class="col-md-9">
+       {#   <div class="row"> #}
+		    <div class="box-body no-padding">
+                  <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="glyphicon glyphicon-unchecked"></i></button>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-share-alt"></i></button>
+                    </div><!-- /.btn-group -->
+                    <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-refresh"></i></button>
+                    <div class="pull-right">
+                      1-50/200
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-right"></i></button>
+                      </div><!-- /.btn-group -->
+                    </div><!-- /.pull-right -->
+                  </div>
+                  <hr>
+
+                  <div class="table-responsive mailbox-messages">
+                  {% if message_list %}
+                    <table class="table table-hover table-striped">
+                      <tbody>
+                      {% for message in message_list %}
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                          <td class="mailbox-name"><a href="#">{{ message.sender }}</a></td>
+                          <td class="mailbox-subject">
+                              {% if message.new %}<strong>{% endif %}
+                              {% if message.replied %}<em>{% endif %}
+                              <a href="{{ message.get_absolute_url }}">{{ message.subject }}</a>
+                              {% if message.replied %}</em>{% endif %}
+                              {% if message.new %}</strong>{% endif %}</td>
+                          <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                          <td class="mailbox-date">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table><!-- /.table -->
+                  {% else %}
+                    <h4 id="newMessage">{% trans "No messages for now." %}</h4>
+                    {% endif %}
+
+                  </div><!-- /.mail-box-messages -->
+                </div><!-- /.box-body -->
+                <hr>
+                <div class="box-footer no-padding">
+                  <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="glyphicon glyphicon-unchecked"></i></button>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-share-alt"></i></button>
+                    </div><!-- /.btn-group -->
+                    <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-refresh"></i></button>
+                    <div class="pull-right">
+                      1-50/200
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-right"></i></button>
+                      </div><!-- /.btn-group -->
+                    </div><!-- /.pull-right -->
+                  </div>
+                </div>
+               </div>
+                 {% endblock %}
+{#            {% block leftside %}#}
+{#             <div class="col-md-9">#}
+{#                    {% if message_list %}#}
+{#                    <table id="newMtable">#}
+{#                        <thead>#}
+{#                            <tr><th>{% trans "Sender" %}</th><th>{% trans "Subject" %}</th><th>{% trans "Received" %}</th><th>{% trans "Action" %}</th></tr>#}
+{#                        </thead>#}
+{#                        <tbody>#}
+{#                            {% for message in message_list %}#}
+{#                                <tr>#}
+{#                                    <td>{{ message.sender }}</td>#}
+{#                                    <td>#}
+{#                                        {% if message.new %}<strong>{% endif %}#}
+{#                                        {% if message.replied %}<em>{% endif %}#}
+{#                                        <a href="{{ message.get_absolute_url }}">{{ message.subject }}</a>#}
+{#                                        {% if message.replied %}</em>{% endif %}#}
+{#                                        {% if message.new %}</strong>{% endif %}</td>#}
+{#                                    <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>#}
+{#                                    <td><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></td>#}
+{#                                </tr>#}
+{#                            {% endfor %}#}
+{#                        </tbody>#}
+{#                    </table>#}
+{#                    {% else %}#}
+{#                    <h4 id="newMessage">{% trans "No messages for now." %}</h4>    #}
+{#                    {% endif %}#}
+{#            </div><!-- end of left side -->#}
+{#            {% endblock %}#}
+{##}
             {% block rightside %}
             <div class="col-md-3">
                 <div class="list-group">
@@ -49,6 +145,7 @@
             </div>
             {% endblock %}
         </div>
+    </div>
     </div>
     <!-- /.container -->
 {% endblock %}
