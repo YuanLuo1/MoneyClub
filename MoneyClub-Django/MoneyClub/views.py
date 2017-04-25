@@ -1,16 +1,39 @@
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, Http404
+from django.core.urlresolvers import reverse
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.mail import send_mail
-from django.shortcuts import render, get_object_or_404
-from django.core.urlresolvers import reverse, resolve
-from django.http import HttpResponse
+
+# Decorator to use built-in authentication system
+from django.contrib.auth.decorators import login_required
+
+# Used to create and manually log in a user
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate, get_user
+
+# Django transaction system so we can use @transaction.atomic
+from django.db import transaction
+
+# Imports from Model and Forms
 from MoneyClub.models import *
 from MoneyClub.forms import *
-from django.http import HttpResponse, Http404
-from django.db import transaction
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import *
-from django.contrib.auth import login, authenticate
+
+from datetime import datetime
+
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.core import serializers
+
+# Used to generate a one-time-use token to verify a user's email address
 from django.contrib.auth.tokens import default_token_generator
+# Used to send mail from within Django
+from django.core.mail import send_mail
+from dateutil import parser
+from django.db import connection
+from random import randint
+import json
+import googlemaps
+import datetime
+import math
+import operator
 
 # Create your views here.
 def home(request, error_message=None):
@@ -49,7 +72,6 @@ def profile(request):
 @transaction.atomic
 def register(request):
     context = {}
-
      # Just display the registration form if this is a GET request
     if request.method == 'GET':
         context['form'] = RegisterForm(auto_id=False)

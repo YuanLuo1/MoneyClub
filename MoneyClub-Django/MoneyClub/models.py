@@ -1,6 +1,19 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
+from models import *
+
+class Stock(models.Model):
+    id = models.IntegerField(db_column='ID', primary_key=True)  # Field name made lowercase.
+    stockname = models.TextField(db_column='StockName', blank=True, null=True)  # Field name made lowercase.
+    stockcompany = models.TextField(db_column='StockCompany', blank=True, null=True)  # Field name made lowercase.
+    stockprice = models.FloatField(db_column='StockPrice', blank=True, null=True)  # Field name made lowercase.
+    stocklink = models.TextField(db_column='StockLink', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = True
+        db_table = 'Stock'
+
 
 class Token(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
@@ -25,6 +38,3 @@ class Info(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
-#class Vote():
-
-#class
