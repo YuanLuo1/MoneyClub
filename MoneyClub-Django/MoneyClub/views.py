@@ -72,8 +72,6 @@ def profile(request):
 @transaction.atomic
 def register(request):
     context = {}
-    stock  =  Stock.objects.all()
-    print(stock)
      # Just display the registration form if this is a GET request
     if request.method == 'GET':
         context['form'] = RegisterForm(auto_id=False)
